@@ -7,7 +7,6 @@
 # an 8-GPU baseline (if applicable), as well as measurements for however
 # many processes can participate in training.
 #
-import datetime
 import argparse
 import itertools
 import json
@@ -18,8 +17,6 @@ import sys
 import time
 
 import numpy as np
-import torchvision
-
 import torch
 import torch.distributed as dist
 import torch.nn as nn
