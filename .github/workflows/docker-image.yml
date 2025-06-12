@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Clear up disk space
+      run:  sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+    - name: Check remaining diskspace
+      run: df -h
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag neb-ex2:$(date +%s)
