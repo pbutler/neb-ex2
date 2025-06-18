@@ -12,4 +12,4 @@
 export HEAD_NODE_ADDR=$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)
 echo $HEAD_NODE_ADDR
 # Run a job in a container
-HEAD_NODE_ADDR=$HEAD_NODE_ADDR HEAD_NODE_PORT2=29400 srun --container-image="pabutler/testimg3" --container-env=HEAD_NODE_ADDR --container-env=HEAD_NODE_PORT2 --container-env=NCCL_IB_DISABLE wrapper.sh
+HEAD_NODE_ADDR=$HEAD_NODE_ADDR HEAD_NODE_PORT2=29400 srun --container-image="ghcr.io#pbutler/neb-ex2:latest" --container-env=HEAD_NODE_ADDR --container-env=HEAD_NODE_PORT2 --container-env=NCCL_IB_DISABLE wrapper.sh
